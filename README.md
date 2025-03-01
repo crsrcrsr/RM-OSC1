@@ -1,4 +1,4 @@
-This is a simple and qurky oscillator firmware for Music thing modular "Radio music module".
+This is a simple and quirky oscillator firmware for Music thing modular "Radio music module".
 
 knob 1 crossfade between sub oscillator and major 5th
 
