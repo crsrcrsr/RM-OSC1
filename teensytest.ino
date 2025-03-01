@@ -23,17 +23,16 @@ AudioConnection          patchCord2(sine3, 0, mixer1, 2);
 AudioConnection          patchCord3(sine1, 0, mixer1, 0);
 AudioConnection          patchCord4(sine2, 0, mixer1, 1);
 AudioConnection          patchCord5(mixer1, dac1);
-// GUItool: end automatically gener
+// GUItool: end automatically generated code
 
 float mode_selector;
 float octmult;
 
-void setup() {                
-  // initialize the digital pin as an output.     
+void setup() {                   
   AudioMemory(5);
   Serial.begin(9600);
   waveform1.begin(0.5,0,WAVEFORM_TRIANGLE);
-
+//octave selecting
 }
 void loop() {
 int voct = ((analogRead(cv_1)));
@@ -59,6 +58,7 @@ if (mode_selector != 4 && mode > 3){
  octmult = 4.0;
  Serial.println("mode 4");
 }
+//messy volt to octave conversion
 float f1 =  octmult*(440*(pow(2,((((((((voct/315.0)*12)+ 48)-69)/12)))))));
 float f2 =  octmult*(440*(pow(2,((((((((voct/315.0)*12)+72)-69)/12)))))));
 float f3 =  440*(pow(2,((((((((voct/315.0)*12)+79)-69)/12))))));
